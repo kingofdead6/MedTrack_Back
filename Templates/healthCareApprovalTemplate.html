@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Healthcare Provider Registration</title>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: #f4f4f4;">
+  <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+    <h2 style="color: #333333; text-align: center;">New Healthcare Provider Registration</h2>
+    <p style="color: #666666;">Hello Admin,</p>
+    <p style="color: #666666;">A new healthcare provider has registered and is awaiting your approval:</p>
+    <ul style="list-style: none; padding: 0; color: #666666;">
+      <li><strong>Name:</strong> {{name}}</li>
+      <li><strong>Email:</strong> {{email}}</li>
+    </ul>
+    <p style="color: #666666;">Please review their details and approve their account.</p>
+    <div style="text-align: center; margin-top: 20px;">
+      <a href="http://localhost:5000/api/healthcare/approve?userId={{userId}}" style="background-color: #007bff; color: #ffffff; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Approve Now</a>
+    </div>
+    <p style="color: #666666; margin-top: 20px;">Thank you,<br>MedTrack Team</p>
+  </div>
+</body>
+</html>
