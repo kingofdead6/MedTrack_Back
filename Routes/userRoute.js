@@ -4,7 +4,7 @@ import authMiddleware from "../Middleware/authMiddleware.js";
 
 const router = express.Router();
 
-router.post("/register", upload.single("certificate"), registerUser); // Add multer for certificate
+router.post("/register", upload.single("certificate"), registerUser); 
 router.post("/login", loginUser);
 router.get("/me", authMiddleware, getCurrentUser);
 
