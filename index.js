@@ -1,9 +1,12 @@
+// index.js or app.js
 import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import userRoute from "./Routes/userRoute.js";
 import healthCareRoute from "./Routes/healthCareRoute.js";
+import adminRoute from "./Routes/adminRoute.js"; 
+import path from "path";
 
 dotenv.config();
 mongoose.set("strictQuery", true);
@@ -13,6 +16,8 @@ app.use(express.json());
 app.use(cors());
 app.use("/api/users", userRoute);
 app.use("/api/healthcare", healthCareRoute);
+app.use("/api/admin", adminRoute); 
+app.use("/uploads", express.static(path.join(path.resolve(), "uploads")));
 
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log("Connected to MongoDB"))
